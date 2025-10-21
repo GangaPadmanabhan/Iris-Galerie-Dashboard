@@ -1,7 +1,6 @@
 version: 1
 applications:
-  - appRoot: /
-    frontend:
+  - frontend:
       phases:
         preBuild:
           commands:
@@ -10,6 +9,7 @@ applications:
           commands:
             - npm run build
       artifacts:
+        # Amplify expects the Next.js build output folder
         baseDirectory: .next
         files:
           - '**/*'
