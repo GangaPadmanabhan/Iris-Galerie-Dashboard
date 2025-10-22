@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
-import { KPIGrid } from "@/components/kpi-grid";
-import { DateRangePicker } from "@/components/date-range-picker";
-import { DirectionCharts } from "@/components/direction-charts";
-import { DataTable } from "@/components/data-table";
+import { KPIGrid } from "../components/kpi-grid";
+import { DateRangePicker } from "../components/date-range-picker";
+import { DirectionCharts } from "../components/direction-charts";
+import { DataTable } from "../components/data-table";
 
 type Kpi = { label: string; value: number | string; delta: number };
 type SeriesRow = { date: string; revenue: number; orders: number };
