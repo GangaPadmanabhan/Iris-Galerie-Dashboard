@@ -1,8 +1,8 @@
 type Props = {
-  from: string | null;
-  to: string | null;
-  setFrom: (v: string | null) => void;
-  setTo: (v: string | null) => void;
+  from: any;
+  to: any;
+  setFrom: (v: any) => void;
+  setTo: (v: any) => void;
 };
 
 export function DateRangePicker({ from, to, setFrom, setTo }: Props) {
