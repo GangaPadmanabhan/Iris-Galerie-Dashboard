@@ -1,5 +1,3 @@
-import React from "react";
-
 type SeriesRow = { date: string; revenue: number; orders: number };
 
 type Props = {

@@ -1,5 +1,3 @@
-import React from "react";
-
 type Kpi = { label: string; value: number | string; delta: number };
 
 type Props = {

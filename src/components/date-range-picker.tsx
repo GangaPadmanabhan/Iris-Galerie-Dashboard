@@ -1,10 +1,8 @@
-import React from "react";
-
 type Props = {
   from: string | null;
   to: string | null;
-  setFrom: (v: any) => void;
-  setTo: (v: any) => void;
+  setFrom: (v: string | null) => void;
+  setTo: (v: string | null) => void;
 };
 
 export function DateRangePicker({ from, to, setFrom, setTo }: Props) {
