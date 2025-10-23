@@ -22,7 +22,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const limitParam = Array.isArray(q.limit) ? q.limit[0] : q.limit ?? "100";
 
     if (!table) return res.status(400).json({ error: "table param required" });
-    if (!/^[\w$.]+$/.test(table)) return res.status(400).json({ error: "invalid table name" });
+	// allow letters, digits, underscore, dash, dot and $; require at least one dot (dataset.table or project.dataset.table)
+	// also reject backticks or semicolons to reduce SQL injection risk
+    if (!/^[A-Za-z0-9_\-.$]+$/.test(table) || table.includes("`") || table.includes(";") || table.indexOf(".") === -1) {
+    	return res.status(400).json({ error: "invalid table name" });
+    }
+
 
     const limit = Math.min(2000, Math.max(1, parseInt(String(limitParam), 10) || 100));
 
